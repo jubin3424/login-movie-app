@@ -8,6 +8,7 @@ import Signup from '@/components/Signup'
 import Home from '@/components/Home'
 import MovieList from '@/components/MovieList'
 import Show from '@/components/ShowPage'
+import Post from '@/components/Post'
 import NotFound from '@/components/NotFound'
 import firebase from 'firebase/app';
 import 'firebase/app';
@@ -48,6 +49,11 @@ let router = new Router({
     {
       path: '/home',
       redirect: '/'
+    },
+    {
+      path: '/post',
+      name: 'Post',
+      component: Post,
     },
     {
       path: '/movie',

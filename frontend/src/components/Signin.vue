@@ -32,11 +32,21 @@
               pass: '',
               checkPass: '',
             },
+            watching_url : window.location.href,
+            full_paths : ''
           }
       },
       methods: {
           async userSignIn () {
             await this.$store.dispatch('userSignIn', { email: this.ruleForm.email, password: this.ruleForm.pass })
+          },
+          async get_next_path () {
+            var full_path = await window.location.href;
+            if (full_path.split('=%2F').length > 1) {
+              full_path = '/' + full_path.split('=%2F')[1];
+            } else full_path = '/';
+            this.$store.state.path = full_path;
+            this.full_paths = full_path;
           }
       },
       computed: {
@@ -48,6 +58,7 @@
         }
       },
       watch: {
+        '$route': 'get_next_path',
         error(value) {
           if (value) {
             this.alert = true

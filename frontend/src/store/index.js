@@ -55,6 +55,7 @@ export const store = new Vuex.Store({
           commit('setUser', {email: firebaseUser.user.email})
           commit('setLoading', false)
           commit('setError', null)
+          alert(this.state.path)
           router.push(this.state.path)
           // this.$store.state.login_error = false
         })
@@ -71,7 +72,8 @@ export const store = new Vuex.Store({
     autoSignIn ({commit}, payload) {
       commit('setUser', {email: payload.email})
     },
-    userSignOut ({commit}) {
+    async userSignOut ({commit}) {
+      await confirm('로그아웃 하시겠습니까?')
       firebase.auth().signOut()
       commit('setUser', null)
       router.push('/')

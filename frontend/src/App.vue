@@ -2,11 +2,12 @@
   <div id="app">
     <div id="nav-bar">
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" >
-        <el-menu-item index="1"><router-link to="home">Home</router-link></el-menu-item>
+        <el-menu-item index="1"><router-link to="/home">Home</router-link></el-menu-item>
         <el-menu-item index="2" v-if="!isAuthenticated"><router-link to="signup_main">Sign Up</router-link></el-menu-item>
         <el-menu-item index="3" v-if="!isAuthenticated"><router-link to="signin_main">Sign In</router-link></el-menu-item>
         <el-menu-item index="3" v-if="isAuthenticated" @click="userSignOut">Sign Out</el-menu-item>
         <el-menu-item index="4"><router-link to="/movie">Movie List</router-link></el-menu-item>
+        <el-menu-item index="5"><router-link to="/post">Post</router-link></el-menu-item>
       </el-menu>
     </div>
     <router-view/>

@@ -16,6 +16,18 @@ sudo apt-get install -y nodejs</pre>
 <li>Install <b>Forever</b></li>
 <li>Install <b>Nginx</b>, configuring Nginx</li>
 https://eladnava.com/binding-nodejs-port-80-using-nginx/#nginx
+  <pre>
+  server {
+    listen 80;
+    server_name ns-110.awsdns-13.com 54.167.161.141;
+
+    location / {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_pass         "http://127.0.0.1:3000";
+    }
+}
+</pre>
 <li>Start the node.js app with <b>forever</b></li>
 <span>Forever을 이용 : https://eladnava.com/deploying-resilient-node-js-apps-with-forever-and-nginx/<br>
 <span>PM2를 이용 : http://www.nikola-breznjak.com/blog/javascript/nodejs/using-pm2-to-run-your-node-js-apps-like-a-pro/ </span>

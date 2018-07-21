@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1be56ab-fa23-4a8f-b9ca-09ecc6901c47" name="Default" comment="" />
+    <list default="true" id="2bd6ce88-adb8-44bb-aa45-6ac6d97786af" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -29,24 +29,33 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1680" />
-    <option name="y" value="-22" />
-    <option name="width" value="1448" />
-    <option name="height" value="1000" />
+    <option name="y" value="23" />
+    <option name="width" value="1226" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.4.1" />
-    <property name="nodejs_interpreter_path" value="/usr/local/Cellar/node/10.4.1/bin/node" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.7.0" />
+    <property name="nodejs_interpreter_path" value="/usr/local/Cellar/node/10.7.0/bin/node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
@@ -63,29 +72,25 @@
       </list>
     </option>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d1be56ab-fa23-4a8f-b9ca-09ecc6901c47" name="Default" comment="" />
-      <created>1531971978932</created>
+      <changelist id="2bd6ce88-adb8-44bb-aa45-6ac6d97786af" name="Default" comment="" />
+      <created>1532153604575</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1531971978932</updated>
-      <workItem from="1531971987839" duration="1000" />
+      <updated>1532153604575</updated>
+      <workItem from="1532153610743" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1000" />
+    <option name="totallyTimeSpent" value="9000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="-22" width="1448" height="1000" extended-state="0" />
+    <frame x="0" y="23" width="1226" height="877" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24979253" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
@@ -102,11 +107,5 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
 </project>

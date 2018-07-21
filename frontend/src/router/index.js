@@ -9,6 +9,8 @@ import Home from '@/components/Home'
 import MovieList from '@/components/MovieList'
 import Show from '@/components/ShowPage'
 import Post from '@/components/Post'
+import NewPost from '@/components/NewPost'
+import EditPost from '@/components/EditPost'
 import NotFound from '@/components/NotFound'
 import firebase from 'firebase/app';
 import 'firebase/app';
@@ -56,6 +58,16 @@ let router = new Router({
       component: Post,
     },
     {
+      path: '/post/new',
+      name: 'NewPost',
+      component: NewPost
+    },
+    {
+      path: '/post/edit/:id',
+      name: 'EditPost',
+      component: EditPost
+    },
+    {
       path: '/movie',
       name: 'MovieList',
       component: MovieList,
@@ -67,11 +79,11 @@ let router = new Router({
       component: Show,
       meta: { requiresAuth: true }
     },
-    {
-      path: '*',
-      name: 'NotFound',
-      component: NotFound
-    }
+    // {
+    //   path: '*',
+    //   name: 'NotFound',
+    //   component: NotFound
+    // }
   ]
 })
 

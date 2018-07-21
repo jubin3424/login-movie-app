@@ -7,9 +7,19 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var movies = require('./routes/movies');
-
+var posts = require('./routes/posts');
+var Post = require('./models/post')
 var app = express();
 app.use(require('connect-history-api-fallback')())
+
+var mongoose = require('mongoose');
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error"));
+db.once("open", function(callback){
+    console.log("Connection Succeed");
+})
+
+mongoose.connect('mongodb://localhost:27017/posts', { useNewUrlParser: true });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +30,35 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.post('/api/posts', (req, res) => {
+    var db = req.db;
+    var title = req.body.title;
+    var description = req.body.description;
+    var new_post = new Post({
+        title: title,
+        description: description
+    })
+
+    new_post.save(function (error) {
+        if (error) {
+            console.log(error)
+            res.send({
+                success: true,
+                message: 'Post saved successfully!'
+            })
+        }
+    })
+});
+
+app.get('/api/posts', (req, res) => {
+    Post.find({}, 'title description', function (error, posts) {
+        if (error) { console.error(error); }
+        res.send({
+            posts: posts
+        })
+    }).sort({_id:-1})
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

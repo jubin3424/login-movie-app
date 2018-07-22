@@ -64,7 +64,7 @@ let router = new Router({
       component: PostDetail
     },
     {
-      path: '/post/new',
+      path: '/newpost',
       name: 'NewPost',
       component: NewPost
     },

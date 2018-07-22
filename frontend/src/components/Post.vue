@@ -24,11 +24,11 @@
         </tr>
       </table>
         <br>
-        <el-button type="success"><router-link to="/post/new">Write</router-link></el-button>
       </div>
       <div v-else>
         <h3>No Posts... broo...</h3>
       </div>
+      <el-button type="success"><router-link to="/newpost">Write</router-link></el-button>
     </div>
 </template>
 

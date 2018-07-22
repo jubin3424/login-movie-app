@@ -18,7 +18,7 @@ db.once("open", (callback) => {
   console.log("Connection Succeed");
 })
 
-mongoose.connect('mongodb://localhost:27017/posts', { useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/new_posts', { useNewUrlParser: true})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

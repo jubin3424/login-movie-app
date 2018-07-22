@@ -9,6 +9,7 @@ import Home from '@/components/Home'
 import MovieList from '@/components/MovieList'
 import Show from '@/components/ShowPage'
 import Post from '@/components/Post'
+import PostDetail from '@/components/PostDetail'
 import NewPost from '@/components/NewPost'
 import EditPost from '@/components/EditPost'
 import NotFound from '@/components/NotFound'
@@ -56,6 +57,11 @@ let router = new Router({
       path: '/post',
       name: 'Post',
       component: Post,
+    },
+    {
+      path: '/post/:id',
+      name: 'PostDetail',
+      component: PostDetail
     },
     {
       path: '/post/new',

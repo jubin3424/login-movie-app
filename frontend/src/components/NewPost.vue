@@ -27,7 +27,9 @@
       },
       methods: {
         addPost () {
-          this.$http.post('/api/posts/new', {title: this.title, description: this.description })
+          this.$http.post('/api/posts/new', {title: this.title,
+                    description: this.description,
+                    written_by: this.getUserName.email.split('@')[0] })
             .then((response) => {
               alert(response.data.message)
               this.$router.push({ name: 'Post' })
@@ -35,6 +37,11 @@
             .catch((response) => {
               alert('오류가 발생했습니다')
             })
+        }
+      },
+      computed: {
+        getUserName () {
+          return this.$store.getters.getUserName
         }
       }
     }

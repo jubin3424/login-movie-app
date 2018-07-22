@@ -3,7 +3,7 @@ var router = express.Router();
 var Post = require('../models/post')
 
 router.get('/', (req, res) => {
-    Post.find({}, 'title description', (error, posts) => {
+    Post.find({}, 'title description created_at written_by', (error, posts) => {
         if (error) { console.error(error)}
         res.send({
             posts: posts
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     var db = req.db;
-    Post.findById(req.params.id, 'title description', (error, post) => {
+    Post.findById(req.params.id, 'title description created_at written_by', (error, post) => {
         if (error) { console.error(error);}
         res.send(post)
     })
@@ -21,11 +21,14 @@ router.get('/:id', (req, res) => {
 
 router.post('/new', (req, res) => {
     var db = req.db;
+    var currentDate = new Date();
     var title = req.body.title;
     var description = req.body.description;
     var new_post = new Post({
         title: title,
-        description: description
+        description: description,
+        created_at: currentDate,
+        written_by: req.body.written_by
     })
 
     new_post.save((error) => {

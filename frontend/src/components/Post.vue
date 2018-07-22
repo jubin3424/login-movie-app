@@ -4,16 +4,19 @@
       <div v-if="posts.length > 0">
       <table style="width: 90%; margin: auto;">
         <tr>
-          <td>User</td>
-          <td>Title</td>
-          <td width="550">Description</td>
-          <td width="100" align="center">Action</td>
+          <td style="background-color: lightgray" width="130">User</td>
+          <td style="background-color: lightsteelblue">Title</td>
+          <!--<td style="background-color: lightsalmon">Description</td>-->
+          <td style="background-color: lightyellow" width="200">When</td>
+          <td style="background-color: lightgoldenrodyellow" width="100" align="center">Action</td>
         </tr>
         <tr v-for="post in posts">
-          <td v-if="post.user">{{ post.user }}</td>
+          <td v-if="post.written_by">{{ post.written_by }}</td>
           <td v-else>Anonymous</td>
-          <td>{{ post.title }}</td>
-          <td>{{ post.description }}</td>
+          <td>
+            <router-link :to="{ name: 'PostDetail', params: { id:post._id }}">{{ post.title }}</router-link></td>
+          <!--<td>{{ post.description }}</td>-->
+          <td>{{ post.created_at.split('T')[0] }} {{ post.created_at.split('T')[1].slice(0,5) }}</td>
           <td align="center">
             <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }">Edit</router-link>
             <span @click="deletePost(post._id)">Delete</span>

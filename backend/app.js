@@ -10,6 +10,7 @@ var movies = require('./routes/movies');
 var posts = require('./routes/posts');
 
 var app = express();
+app.use(require('connect-history-api-fallback')())
 
 var mongoose = require('mongoose');
 var db = mongoose.connection;

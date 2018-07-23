@@ -26,9 +26,11 @@
         <br>
       </div>
       <div v-else>
-        <h3>No Posts... broo...</h3>
+        <i class="el-icon-loading" style="font-size: 2rem;"></i>
+        <h4>게시글을 불러오고 있습니다..</h4>
       </div>
       <el-button type="success"><router-link to="/newpost">Write</router-link></el-button>
+
     </div>
 </template>
 

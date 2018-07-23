@@ -1,7 +1,7 @@
 <template>
     <div class="movies">
       <h1>Movie List</h1>
-      <el-row :gutter="40">
+      <el-row v-if="movies.length > 0" :gutter="40">
         <el-col :sm="24" :md="6" v-for="(movie, index) in movies" :key="index" style="margin-bottom: 20px;">
           <el-card :body-style="{ padding: '0px' }">
             <img v-bind:src="movie.poster" class="image" style="width:100%;">
@@ -14,6 +14,10 @@
             </div>
           </el-card>
         </el-col>
+      </el-row>
+      <el-row v-else>
+        <i class="el-icon-loading" style="font-size: 2rem;"></i>
+        <h4>영화 목록을 불러오고 있습니다..</h4>
       </el-row>
     </div>
 </template>

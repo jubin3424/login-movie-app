@@ -15,7 +15,7 @@
 
 <script>
     export default {
-      name: "PostDeatil",
+      name: "PostDetail",
       data () {
         return {
           post: {}

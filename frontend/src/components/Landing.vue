@@ -15,6 +15,11 @@
 <script>
   export default {
     name: "Landing",
+    data () {
+      return {
+        email: ''
+      }
+    },
     computed: {
       isAuthenticated () {
         return this.$store.getters.isAuthenticated
@@ -23,6 +28,8 @@
         return this.$store.getters.getUserName
       }
     },
+    beforeCreate () {
+    }
   }
 </script>
 

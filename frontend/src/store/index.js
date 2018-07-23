@@ -39,25 +39,29 @@ export const store = new Vuex.Store({
           router.push('/home')
         })
     },
-    signInWithGoogle () {
+    async signInWithGoogle () {
       const provider = new firebase.auth.GoogleAuthProvider()
-      firebase.auth().signInWithPopup(provider)
+      await firebase.auth().signInWithPopup(provider)
         .then((firebaseUser) => {
           this.state.user = firebaseUser.user
-          router.push(this.state.path)
+          // router.push(this.state.path)
+          window.open(this.state.path, "_self")
         })
         .catch(err => alert(err))
     },
-    userSignIn ({commit}, payload) {
-      commit('setLoading', true)
-      firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
+    async userSignIn ({commit}, payload) {
+      await commit('setLoading', true)
+      await firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         .then(firebaseUser => {
           commit('setUser', {email: firebaseUser.user.email})
           commit('setLoading', false)
           commit('setError', null)
-          alert(this.state.path)
-          router.push(this.state.path)
-          // this.$store.state.login_error = false
+          // router.push(this.state.path)
+          // window.location.reload()
+          // var addr = window.location.hostname
+          window.open(this.state.path, "_self")
+          // this.$store.state.login_
+          // error = false
         })
         .catch(error => {
           commit('setError', error.message)

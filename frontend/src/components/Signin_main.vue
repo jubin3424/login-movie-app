@@ -9,6 +9,8 @@
 
 <script>
   import Login from './Signin'
+  import { mapGetters } from 'vuex'
+
   export default {
     name: "Login",
     data () {
